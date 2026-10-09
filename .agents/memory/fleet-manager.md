@@ -99,6 +99,12 @@ The latest uploaded FleetX logo is reserved for the Chrome-installed app icon/PW
 
 **How to apply:** Keep the JPEG in the web app's icon/manifest links only. Preserve existing splash/login artwork and user-configured business logo behavior.
 
+The Google sign-in screen and the post-login Owner/Driver workspace chooser are expected FleetX screens, not error pages.
+
+**Why:** The user confirmed these screens with mobile screenshots.
+
+**How to apply:** Treat them as normal states when viewing the app signed out or before choosing a workspace; report an error only when an actual failure is shown or a flow does not work.
+
 Driver assignment is managed only from the Drivers section; vehicle forms do not collect driver identity, and Fleet display resolves the assigned driver from the driver-to-vehicle relationship.
 
 **Why:** A driver should be registered once and assigned consistently rather than duplicated as editable text on each vehicle.
