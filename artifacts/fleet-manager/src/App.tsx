@@ -77,8 +77,8 @@ function Router({ role }: { role: 'owner' | 'driver' }) {
 
 function Splash({ label = 'Loading...' }: { label?: string }) {
   return (
-    <main className="fm-splash-screen" aria-label="Fleetvix loading">
-      <div className="fm-splash-logo-wrap"><img src={splashLogo} alt="Fleetvix logo" /></div>
+    <main className="fm-splash-screen" aria-label="FleetX loading">
+      <div className="fm-splash-logo-wrap"><img src={splashLogo} alt="FleetX logo" /></div>
       <div className="fm-splash-loading-line" aria-hidden="true" />
       <span className="fm-splash-loading-label">{label}</span>
     </main>
@@ -145,8 +145,8 @@ function RoleSelection({
     <main className="min-h-[100dvh] bg-background px-5 py-10 text-foreground">
       <div className="mx-auto flex min-h-[80dvh] w-full max-w-md flex-col justify-center">
         <div className="mb-8 text-center">
-          <img src={splashLogo} alt="Fleetvix logo" className="fm-login-logo" />
-          <h1 className="text-3xl font-black">Choose your Fleetvix workspace</h1>
+          <img src={splashLogo} alt="FleetX logo" className="fm-login-logo" />
+          <h1 className="text-3xl font-black">Choose your FleetX workspace</h1>
           <p className="mt-2 text-sm text-muted-foreground">Select how you use this account.</p>
         </div>
         <div className="grid gap-4">
@@ -255,7 +255,7 @@ function AuthenticatedShell() {
   if (workspaceError) {
     return (
       <main className="fm-splash-screen px-6 text-center">
-        <div className="fm-splash-logo-wrap"><img src={splashLogo} alt="Fleetvix logo" /></div>
+        <div className="fm-splash-logo-wrap"><img src={splashLogo} alt="FleetX logo" /></div>
         <p className="max-w-sm text-sm font-semibold text-destructive">{workspaceError}</p>
         <div className="mt-4 flex w-full max-w-sm gap-2">
           <button
@@ -349,9 +349,9 @@ function DriverAccessStatus({
   return (
     <main className="min-h-[100dvh] bg-background px-5 py-10 text-foreground">
       <div className="mx-auto flex min-h-[80dvh] w-full max-w-md flex-col justify-center text-center">
-        <img src={splashLogo} alt="Fleetvix logo" className="fm-login-logo mx-auto" />
+        <img src={splashLogo} alt="FleetX logo" className="fm-login-logo mx-auto" />
         <h1 className="mt-6 text-3xl font-black">{status === "blocked" ? "Owner blocked you" : "Owner removed you"}</h1>
-        <p className="mt-3 text-sm text-muted-foreground">{status === "blocked" ? "Your previous logs and payment history are safe. Ask the owner to unblock you to continue." : "You can join an owner again with a valid Fleetvix code."}</p>
+        <p className="mt-3 text-sm text-muted-foreground">{status === "blocked" ? "Your previous logs and payment history are safe. Ask the owner to unblock you to continue." : "You can join an owner again with a valid FleetX code."}</p>
         {status === "removed" && <form onSubmit={rejoin} className="mt-6 space-y-3 text-left">
            <input required value={code} onChange={(event) => setCode(event.target.value.toUpperCase())} placeholder="Vehicle code" className="w-full rounded-xl bg-muted p-4 font-black tracking-[0.2em] outline-none" />
           <input required value={name} onChange={(event) => setName(event.target.value)} placeholder="Your name" className="w-full rounded-xl bg-muted p-4 font-semibold outline-none" />

@@ -48,7 +48,7 @@ function formatAuthError(error: unknown) {
   const message = error instanceof Error ? error.message : String(error);
   const normalized = message.toLowerCase();
   if (normalized.includes("failed to fetch") || normalized.includes("fetch failed") || normalized.includes("networkerror")) {
-    return "Fleetvix could not reach Supabase. Check this app's Supabase URL and publishable-key configuration, then try again.";
+    return "FleetX could not reach Supabase. Check this app's Supabase URL and publishable-key configuration, then try again.";
   }
   if (
     normalized.includes("redirect_uri_mismatch") ||
@@ -73,13 +73,13 @@ function formatAuthError(error: unknown) {
     return "Google sign-in was denied or cancelled. Retry and approve the requested access for the selected account.";
   }
   if (normalized.includes("oauth state") || normalized.includes("flow_state")) {
-    return "Google returned to Fleetvix, but this browser's sign-in state did not match. Allow the exact app URL in Supabase Authentication → URL Configuration → Redirect URLs, then retry in the same browser.";
+    return "Google returned to FleetX, but this browser's sign-in state did not match. Allow the exact app URL in Supabase Authentication → URL Configuration → Redirect URLs, then retry in the same browser.";
   }
   if (normalized.includes("code verifier") || normalized.includes("pkce")) {
-    return "Google returned to Fleetvix, but this browser no longer has the sign-in verifier. If you opened Fleetvix inside another app, open it directly in Chrome or your full browser, start a fresh sign-in, and finish in that same browser.";
+    return "Google returned to FleetX, but this browser no longer has the sign-in verifier. If you opened FleetX inside another app, open it directly in Chrome or your full browser, start a fresh sign-in, and finish in that same browser.";
   }
   if (normalized.includes("timed out")) {
-    return "Fleetvix could not finish checking your session. Check the Supabase URL and network connection, then try again.";
+    return "FleetX could not finish checking your session. Check the Supabase URL and network connection, then try again.";
   }
   return message;
 }

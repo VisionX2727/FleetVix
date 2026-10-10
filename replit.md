@@ -1,6 +1,6 @@
-# Fleet Manager
+# FleetX
 
-Fleet Manager is a mobile-first operations app for small fleet owners to track vehicles, daily work, fuel, drivers, customers, khata balances, receipts, and profitability.
+FleetX is a mobile-first operations app for small fleet owners to track vehicles, daily work, fuel, drivers, customers, khata balances, receipts, and profitability.
 
 ## Run & Operate
 

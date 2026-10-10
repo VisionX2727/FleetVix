@@ -58,7 +58,7 @@ export default function Fleetu() {
         <header className="fm-fleetu-header">
           <div className="flex items-center gap-3">
             <div className="fm-fleetu-mark"><Sparkles size={22} /></div>
-            <div><p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">Fleetvix intelligence</p><h1 className="text-2xl font-black">Fleetu</h1><p className="text-xs text-muted-foreground">Your private fleet assistant</p></div>
+            <div><p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">FleetX intelligence</p><h1 className="text-2xl font-black">Fleetu</h1><p className="text-xs text-muted-foreground">Your private fleet assistant</p></div>
           </div>
           <div className="fm-fleetu-scope"><LockKeyhole size={13} />{owner ? "Owner scope" : "Driver scope"}</div>
         </header>
@@ -71,7 +71,7 @@ export default function Fleetu() {
           <div className="fm-fleetu-thread" aria-live="polite">
             {!messages.length && <div className="fm-fleetu-empty"><Bot size={38} /><h3>How can I help?</h3><p>Ask a question below or choose a prompt to get started.</p></div>}
             {messages.map((message) => <div key={message.id} className={`fm-fleetu-message ${message.role === "user" ? "is-user" : "is-model"}`}><div className="fm-fleetu-avatar">{message.role === "user" ? <UserRound size={15} /> : <Bot size={15} />}</div><div><span className="fm-fleetu-message-label">{message.role === "user" ? "You" : "Fleetu"}</span><p>{message.text}</p></div></div>)}
-            {busy && <div className="fm-fleetu-message is-model"><div className="fm-fleetu-avatar"><Bot size={15} /></div><div><span className="fm-fleetu-message-label">Fleetu</span><p className="animate-pulse">Checking your Fleetvix records…</p></div></div>}
+            {busy && <div className="fm-fleetu-message is-model"><div className="fm-fleetu-avatar"><Bot size={15} /></div><div><span className="fm-fleetu-message-label">Fleetu</span><p className="animate-pulse">Checking your FleetX records…</p></div></div>}
             <div ref={bottomRef} />
           </div>
           {error && <div className="fm-fleetu-error">{error}</div>}
@@ -79,7 +79,7 @@ export default function Fleetu() {
             <input value={input} onChange={(event) => setInput(event.target.value)} placeholder={owner ? "Ask about vehicles, drivers, logs or payments…" : "Ask Fleetu to verify your own records…"} maxLength={2000} disabled={busy} />
             <button type="submit" disabled={busy || !input.trim()} aria-label="Send message"><Send size={18} /></button>
           </form>
-          <div className="fm-fleetu-privacy"><ShieldCheck size={14} />{owner ? "Fleetu is limited to your authenticated Fleetvix workspace." : "Driver privacy boundary: Fleetu cannot access owner-only or other-driver information."}</div>
+          <div className="fm-fleetu-privacy"><ShieldCheck size={14} />{owner ? "Fleetu is limited to your authenticated FleetX workspace." : "Driver privacy boundary: Fleetu cannot access owner-only or other-driver information."}</div>
         </div>
       </div>
     </Layout>

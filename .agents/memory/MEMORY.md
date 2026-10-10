@@ -1,4 +1,4 @@
-- [Fleet Manager milestone](fleet-manager.md) — local-first fleet operations app with Supabase OAuth boundary and linked khata/vehicle records.
+- [FleetX milestone](fleet-manager.md) — local-first fleet operations app with Supabase OAuth boundary and linked khata/vehicle records.
 - [Driver pay snapshots](driver-pay-snapshots.md) — driver earnings must use the rate stored on each work log, never the driver's current rate.
 - [Supabase secret handling](supabase-secret-handling.md) — Supabase configuration belongs in Replit environment secrets, never tracked project config or Git history.
 - [Fleet Manager auth bootstrap](fleet-manager-auth-bootstrap.md) — bound Supabase session loading and clear stale artifact listeners before restarting after secret changes.

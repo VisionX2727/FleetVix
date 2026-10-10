@@ -52,7 +52,7 @@ export default function AdminDashboard() {
   useEffect(() => { void load(); }, [session, status, priority, category]);
 
   if (!user || !session || !isAdminEmail(user.email)) {
-    return <main className="fm-admin-shell flex items-center justify-center p-6"><div className="max-w-md rounded-3xl border border-border bg-card p-7 text-center"><ShieldCheck className="mx-auto text-primary" size={40} /><h1 className="mt-4 text-2xl font-black">Admin access only</h1><p className="mt-2 text-sm text-muted-foreground">This dashboard is restricted to authorized Fleetvix administrators.</p><button type="button" onClick={() => void signOut()} className="mt-5 rounded-xl bg-primary px-5 py-3 font-black text-primary-foreground">Back to sign in</button></div></main>;
+    return <main className="fm-admin-shell flex items-center justify-center p-6"><div className="max-w-md rounded-3xl border border-border bg-card p-7 text-center"><ShieldCheck className="mx-auto text-primary" size={40} /><h1 className="mt-4 text-2xl font-black">Admin access only</h1><p className="mt-2 text-sm text-muted-foreground">This dashboard is restricted to authorized FleetX administrators.</p><button type="button" onClick={() => void signOut()} className="mt-5 rounded-xl bg-primary px-5 py-3 font-black text-primary-foreground">Back to sign in</button></div></main>;
   }
 
   const saveTicket = async (payload: { status?: SupportTicket["status"]; priority?: SupportTicket["priority"]; adminReply?: string }) => {
@@ -107,7 +107,7 @@ export default function AdminDashboard() {
   return (
     <main className="fm-admin-shell">
       <header className="flex shrink-0 items-center justify-between border-b border-border bg-[#101b2a] px-5 py-4">
-        <div><p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">Fleetvix control room</p><h1 className="text-2xl font-black">Admin Dashboard</h1><p className="text-xs text-muted-foreground">{user.email}</p></div>
+        <div><p className="text-[10px] font-black uppercase tracking-[0.25em] text-primary">FleetX control room</p><h1 className="text-2xl font-black">Admin Dashboard</h1><p className="text-xs text-muted-foreground">{user.email}</p></div>
         <div className="flex items-center gap-2"><Link href="/" className="rounded-xl border border-border px-3 py-2 text-xs font-bold text-muted-foreground">Exit</Link><button type="button" onClick={() => void signOut()} className="rounded-xl border border-rose-400/30 p-2 text-rose-300" aria-label="Log out"><LogOut size={17} /></button></div>
       </header>
        <div className="min-h-0 flex-1 overflow-hidden p-4 md:p-5">
@@ -183,7 +183,7 @@ export default function AdminDashboard() {
             {selected ? (
               <div>
                 <div className="flex items-start justify-between gap-3">
-                  <div><p className="text-[10px] font-black uppercase tracking-widest text-primary">{selected.id}</p><h2 className="mt-1 text-xl font-black">{selected.subject}</h2><p className="mt-1 text-xs text-muted-foreground">{selected.userName || "Fleetvix user"} · {selected.userEmail}</p></div>
+                  <div><p className="text-[10px] font-black uppercase tracking-widest text-primary">{selected.id}</p><h2 className="mt-1 text-xl font-black">{selected.subject}</h2><p className="mt-1 text-xs text-muted-foreground">{selected.userName || "FleetX user"} · {selected.userEmail}</p></div>
                   <span className="fm-status fm-status-idle">{selected.status}</span>
                 </div>
                 <div className="mt-5 grid grid-cols-2 gap-2 text-xs"><div className="rounded-xl bg-background p-3"><span className="text-muted-foreground">Category</span><strong className="mt-1 block">{selected.category}</strong></div><div className="rounded-xl bg-background p-3"><span className="text-muted-foreground">Created</span><strong className="mt-1 block">{new Date(selected.createdAt).toLocaleString("en-IN")}</strong></div></div>

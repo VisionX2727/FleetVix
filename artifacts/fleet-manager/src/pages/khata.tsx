@@ -190,7 +190,7 @@ export default function Khata() {
     const amount = batchId ? Math.max(0, batchSubtotal - received) : batchSubtotal;
     const upi = state.settings.upiId || "fleet-owner@upi";
     const amountPart = amount > 0 ? `&am=${amount}` : "";
-    const companyName = state.settings.companyName || state.settings.businessName || "Fleetvix";
+    const companyName = state.settings.companyName || state.settings.businessName || "Fleet owner";
     const payload = `upi://pay?pa=${encodeURIComponent(upi)}&pn=${encodeURIComponent(companyName)}${amountPart}&cu=INR`;
     try {
       const dataUrl = await QRCode.toDataURL(payload, { width: 280, margin: 2, errorCorrectionLevel: "M" });
@@ -214,8 +214,8 @@ export default function Khata() {
       invoiceId: `RC-${today()}-${customer.phone.replace(/\D/g, "").slice(-4) || customer.id.slice(-4).toUpperCase()}`,
       issuedAt: new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }),
       issuedTime: new Date().toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" }),
-       businessName: state.settings.companyName || state.settings.businessName || "Fleetvix",
-      companyName: state.settings.companyName || state.settings.businessName || "Fleetvix",
+       businessName: state.settings.companyName || state.settings.businessName || "",
+      companyName: state.settings.companyName || state.settings.businessName || "",
       ownerName: state.settings.ownerName || "",
       phone: state.settings.phone || "",
       email: state.settings.email || "",
@@ -428,7 +428,7 @@ export default function Khata() {
         <Dialog open={qrOpen} onOpenChange={setQrOpen}>
           <DialogContent className="w-[90vw] max-w-sm rounded-2xl text-center">
             <DialogHeader><DialogTitle className="text-xl font-black">Payment QR</DialogTitle></DialogHeader>
-            {qrDataUrl && <><div className="mb-3 text-center text-lg font-black">{state.settings.companyName || state.settings.businessName || "Fleetvix"}</div><img src={qrDataUrl} alt="Payment QR" className="mx-auto h-64 w-64 rounded-xl bg-white p-2" /><p className="text-sm text-muted-foreground">Scan to pay {Math.max(0, balance) ? `₹${Math.max(0, balance).toLocaleString("en-IN")}` : "any amount"}</p><div className="mt-3 flex justify-center gap-5"><button type="button" onClick={() => void downloadQr(selected)} className="text-sm font-bold text-primary"><Download className="mr-1 inline" size={14} />Download QR</button><button type="button" onClick={() => void shareQr(selected)} className="text-sm font-bold text-primary"><Share2 className="mr-1 inline" size={14} />Share QR</button></div></>}
+            {qrDataUrl && <><div className="mb-3 text-center text-lg font-black">{state.settings.companyName || state.settings.businessName || "Fleet owner"}</div><img src={qrDataUrl} alt="Payment QR" className="mx-auto h-64 w-64 rounded-xl bg-white p-2" /><p className="text-sm text-muted-foreground">Scan to pay {Math.max(0, balance) ? `₹${Math.max(0, balance).toLocaleString("en-IN")}` : "any amount"}</p><div className="mt-3 flex justify-center gap-5"><button type="button" onClick={() => void downloadQr(selected)} className="text-sm font-bold text-primary"><Download className="mr-1 inline" size={14} />Download QR</button><button type="button" onClick={() => void shareQr(selected)} className="text-sm font-bold text-primary"><Share2 className="mr-1 inline" size={14} />Share QR</button></div></>}
           </DialogContent>
         </Dialog>
         <Dialog open={receiptActionsOpen} onOpenChange={setReceiptActionsOpen}>

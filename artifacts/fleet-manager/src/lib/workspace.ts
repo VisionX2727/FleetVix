@@ -110,7 +110,7 @@ async function request<T>(path: string, token: string, init?: RequestInit): Prom
       }
     }
   }
-  throw lastError || new Error("Fleetvix could not reach the workspace server. Check your internet connection and try again.");
+  throw lastError || new Error("FleetX could not reach the workspace server. Check your internet connection and try again.");
 }
 
 export function getWorkspace(token: string) {
@@ -274,5 +274,5 @@ export async function askFleetu(token: string, message: string, history: FleetuM
       }
     }
   }
-  throw lastError || new Error("Fleetu could not reach the Fleetvix assistant.");
+  throw lastError || new Error("Fleetu could not reach the FleetX assistant.");
 }

@@ -38,7 +38,7 @@ export type AppState = {
 };
 export type MaintenanceRequest = { id: string; vehicleId: string; driverId: string; date: string; title: string; description?: string; status: "Open" | "Resolved" };
 
-const defaultSettings: Settings = { businessName: 'Fleetvix', companyName: '', ownerName: '', phone: '', address: '', email: '', gstPercentage: 0, isLoggedIn: true };
+const defaultSettings: Settings = { businessName: '', companyName: '', ownerName: '', phone: '', address: '', email: '', gstPercentage: 0, isLoggedIn: true };
 
 const defaultState: AppState = {
   vehicles: [],

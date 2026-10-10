@@ -69,10 +69,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
        <Link href="/calculator" className="sr-only">Calculator</Link>
        <Dialog open={creditOpen} onOpenChange={setCreditOpen}>
          <DialogContent className="w-[88vw] max-w-sm rounded-2xl">
-           <DialogHeader><DialogTitle>About Fleetvix</DialogTitle></DialogHeader>
+           <DialogHeader><DialogTitle>About FleetX</DialogTitle></DialogHeader>
            <div className="space-y-3 pt-2 text-center">
              <p className="text-lg font-black">App made by Mandar Patil</p>
-             <p className="text-sm text-muted-foreground">Fleetvix helps owners and drivers manage vehicles, work, payments and records.</p>
+             <p className="text-sm text-muted-foreground">FleetX helps owners and drivers manage vehicles, work, payments and records.</p>
            </div>
          </DialogContent>
        </Dialog>

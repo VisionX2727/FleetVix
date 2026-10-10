@@ -31,8 +31,8 @@ export default function Login({ adminOnly = false }: { adminOnly?: boolean }) {
     <main className="min-h-[100dvh] bg-background flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-md flex flex-col gap-8">
         <div className="text-center">
-          <img src={fleetXLogo} alt="Fleetvix logo" className="fm-login-logo" />
-           <h1 className="text-3xl font-black tracking-tight text-foreground">Fleetvix</h1>
+          <img src={fleetXLogo} alt="FleetX logo" className="fm-login-logo" />
+           <h1 className="text-3xl font-black tracking-tight text-foreground">FleetX</h1>
           <p className="text-muted-foreground mt-2 font-medium">Run your vehicles, work logs, drivers and accounts from one place.</p>
         </div>
 
@@ -47,8 +47,8 @@ export default function Login({ adminOnly = false }: { adminOnly?: boolean }) {
               <h2 className="font-bold text-foreground text-lg">{adminOnly ? "Admin sign in" : "Sign in to continue"}</h2>
               <p className="text-sm text-muted-foreground mt-0.5 leading-snug">
                 {adminOnly
-                  ? "Authorized administrators can manage Fleetvix support and accounts."
-                  : "Sign in with your Google account to open your Fleetvix workspace."}
+                  ? "Authorized administrators can manage FleetX support and accounts."
+                  : "Sign in with your Google account to open your FleetX workspace."}
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function Login({ adminOnly = false }: { adminOnly?: boolean }) {
             </div>
           )}
 
-            <p className="text-[11px] text-muted-foreground text-center mt-6">{adminOnly ? <Link href="/" className="underline underline-offset-4">Back to Fleetvix sign in</Link> : <>Only your signed-in account can access its fleet workspace. <Link href="/admin" className="ml-1 underline underline-offset-4">Admin sign in</Link></>}</p>
+            <p className="text-[11px] text-muted-foreground text-center mt-6">{adminOnly ? <Link href="/" className="underline underline-offset-4">Back to FleetX sign in</Link> : <>Only your signed-in account can access its fleet workspace. <Link href="/admin" className="ml-1 underline underline-offset-4">Admin sign in</Link></>}</p>
         </div>
 
         <p className="text-xs text-muted-foreground/60 text-center font-bold mt-4 uppercase tracking-[0.15em]">

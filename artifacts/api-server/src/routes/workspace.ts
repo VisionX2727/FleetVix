@@ -762,7 +762,7 @@ router.post("/invoices", async (req, res) => {
     res.status(404).json({ error: "Driver not found" });
     return;
   }
-  const created = await db.insert(fleetInvoices).values({ id: id("invoice"), ownerUserId: userId, driverUserId: member.driverUserId, title: String(req.body?.title || "Fleetvix receipt"), html: String(req.body?.html || "") }).returning();
+  const created = await db.insert(fleetInvoices).values({ id: id("invoice"), ownerUserId: userId, driverUserId: member.driverUserId, title: String(req.body?.title || "Driver receipt"), html: String(req.body?.html || "") }).returning();
   res.json({ invoice: created[0] });
 });
 

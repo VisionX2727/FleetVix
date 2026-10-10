@@ -1,6 +1,6 @@
 ---
-name: Fleet Manager milestone
-description: Durable product decisions for the Fleet Manager app.
+name: FleetX milestone
+description: Durable product decisions for the FleetX app.
 ---
 
 The first milestone intentionally keeps fleet records local-first while using Supabase for Google Sign-In and logout. Khata charges are linked back to work logs and vehicles so customer balances, QR amounts, receipts, and vehicle profitability can be derived from the same work entry.
@@ -69,11 +69,11 @@ FleetX is the user-facing app brand, with the supplied FleetX artwork used as th
 
 **How to apply:** Keep FleetX in visible app metadata, login/loading UI, and default-brand fallbacks; preserve any user-entered business/company name separately.
 
-Home shows the saved company name in place of the app label when one is configured, while receipts contain only user/business receipt details and never the FleetX app brand. Driver management is accessed from Fleet.
+Home shows the saved company name in place of the app label when one is configured, while receipts contain only user/business receipt details and never the FleetX app brand. Driver management is accessed from Fleet. In the owner Drivers section, keep driver actions in the lower driver list, omit the duplicate upper access-code/details panel, and open selected driver details full-screen.
 
-**Why:** The user wants customer-facing screens and receipts to represent their business rather than the app product, while keeping driver operations grouped with fleet management.
+**Why:** The user wants customer-facing screens and receipts to represent their business rather than the app product, driver operations grouped with fleet management, duplicate driver controls removed, and driver details to use a full-screen view.
 
-**How to apply:** Keep the Home company-name precedence and avoid adding product-brand fallbacks to invoice HTML or receipt share metadata; leave QR payment requests as a separate flow.
+**How to apply:** Keep the Home company-name precedence and avoid adding product-brand fallbacks to invoice HTML or receipt share metadata; leave QR payment requests as a separate flow. Keep owner driver controls in the existing lower list and make the selected-driver detail view full-screen.
 
 Vercel must build the FleetX frontend artifact directly rather than running the workspace-wide build, which also compiles the unrelated API package and can surface its transitive `pngjs` type error.
 

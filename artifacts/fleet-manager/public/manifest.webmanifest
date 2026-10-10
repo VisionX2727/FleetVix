@@ -1,7 +1,7 @@
 {
-  "name": "Fleetvix",
-  "short_name": "Fleetvix",
-  "description": "Fleetvix fleet operations",
+  "name": "FleetX",
+  "short_name": "FleetX",
+  "description": "FleetX fleet operations",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#070d1d",
