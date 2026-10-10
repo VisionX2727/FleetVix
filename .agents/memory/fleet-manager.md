@@ -73,7 +73,7 @@ Home shows the saved company name in place of the app label when one is configur
 
 **Why:** The user wants customer-facing screens and receipts to represent their business rather than the app product, driver operations grouped with fleet management, duplicate driver controls removed, and driver details to use a full-screen view.
 
-**How to apply:** Keep the Home company-name precedence and avoid adding product-brand fallbacks to invoice HTML or receipt share metadata; leave QR payment requests as a separate flow. Keep owner driver controls in the existing lower list and make the selected-driver detail view full-screen.
+**How to apply:** Keep the Home company-name precedence and avoid adding product-brand fallbacks to invoice HTML or receipt share metadata; leave QR payment requests as a separate flow. Keep owner driver controls in the existing lower list and make the selected-driver detail view full-screen, safe-area-aware, vertically scrollable, and free of horizontal overflow on narrow devices.
 
 Vercel must build the FleetX frontend artifact directly rather than running the workspace-wide build, which also compiles the unrelated API package and can surface its transitive `pngjs` type error.
 
